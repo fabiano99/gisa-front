@@ -22,23 +22,17 @@ export class ApiService {
   }
 
   chatPrompt(prompt: string): Observable<{response: string}> {
-    // return this.http.post<any>(`${this.baseUrl}/chat`, {
-    //   "query": {
-    //     "user_query": prompt
-    //   },
-    //   "db_config": {
-    //     "host": "localhost",
-    //     "port": 3306,
-    //     "user": "user",
-    //     "password": "user",
-    //     "database": "Pedidos"
-    //   }
-    // });
-
-    //mock return
-    return new Observable((observer) => {
-      observer.next({response: 'This is a mock response'});
-      observer.complete();
+    return this.http.post<any>(`${this.baseUrl}/chat`, {
+      "query": {
+        "user_query": prompt
+      },
+      "db_config": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "user",
+        "password": "user",
+        "database": "Pedidos"
+      }
     });
   }
 
