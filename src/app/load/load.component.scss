@@ -1,0 +1,38 @@
+.load {
+  &__container {
+    position: fixed;
+    background-image: url('/load-background.png');
+    background-size: cover;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9999;
+  }
+  &__spinner {
+    @keyframes spin {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
+    }
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+}
+
+
+

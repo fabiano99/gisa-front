@@ -1,0 +1,72 @@
+{
+    "cards": [
+        {
+          "titulo": "Faturamento",
+          "valor": 34862.88,
+          "melhor_mes": "NOV 2023",
+          "periodo_anterior": -7
+        },
+        {
+          "titulo": "Novos clientes",
+          "valor": 124862.88,
+          "melhor_mes": "OUT 2023",
+          "periodo_anterior": 22
+        },
+        {
+          "titulo": "Campeões de vendas",
+          "valor": 211862.88,
+          "melhor_mes": "NOV 2023",
+          "periodo_anterior": -10
+        },
+        {
+          "titulo": "Clientes fidelizados",
+          "valor": 434862.88,
+          "melhor_mes": "DEZ 2023",
+          "periodo_anterior": 18
+        },
+        {
+          "titulo": "Ticket médio",
+          "valor": 62.88,
+          "melhor_mes": "NOV 2023",
+          "periodo_anterior": -7
+        }
+    ],
+
+    "graficos": {
+      "data": [
+          {
+              "Eixo_y": "Fevereiro",
+              "Eixo_x": 0.34950000000000003
+          },
+          {
+              "Eixo_y": "Março",
+              "Eixo_x": 0.3635
+          },
+          {
+              "Eixo_y": "Abril",
+              "Eixo_x": 0.3688
+          },
+          {
+              "Eixo_y": "Maio",
+              "Eixo_x": 0.0547
+          },
+          {
+              "Eixo_y": "Fevereiro",
+              "Eixo_x": 34.95
+          },
+          {
+              "Eixo_y": "Março",
+              "Eixo_x": 36.35
+          },
+          {
+              "Eixo_y": "Abril",
+              "Eixo_x": 36.88
+          },
+          {
+              "Eixo_y": "Maio",
+              "Eixo_x": 5.47
+          }
+      ],
+      "graph_code": "\nimport matplotlib.pyplot as plt\n\ndata = [{'Eixo_y': 'Fevereiro', 'Eixo_x': 0.34950000000000003}, {'Eixo_y': 'Março', 'Eixo_x': 0.3635}, {'Eixo_y': 'Abril', 'Eixo_x': 0.3688}, {'Eixo_y': 'Maio', 'Eixo_x': 0.0547}, {'Eixo_y': 'Fevereiro', 'Eixo_x': 34.95}, {'Eixo_y': 'Março', 'Eixo_x': 36.35}, {'Eixo_y': 'Abril', 'Eixo_x': 36.88}, {'Eixo_y': 'Maio', 'Eixo_x': 5.47}]\n\nlabels = [item['Eixo_y'] for item in data]\nvalues = [item['Eixo_x'] for item in data]\n\nplt.figure(figsize=(10, 6))\nplt.bar(labels, values, color='blue')\nplt.xlabel('Eixo Y')\nplt.ylabel('Eixo X')\nplt.title('Gráfico de Dados')\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()\n"
+  }
+}

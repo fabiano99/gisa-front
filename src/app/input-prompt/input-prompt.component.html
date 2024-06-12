@@ -1,0 +1,6 @@
+<gisa-load *ngIf="isLoading"></gisa-load>
+<div class="input">
+    <input class="input__field" type="text" [(ngModel)]="prompt" #control="ngModel" (keyup.enter)="handleEnter()" placeholder="Digite o que você precisa" />
+    <button (click)="submitPrompt()" class="input__button" [disabled]="isLoading || !prompt.trim()">Enviar</button>
+</div>
+

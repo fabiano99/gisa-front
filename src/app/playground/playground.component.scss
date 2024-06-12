@@ -1,0 +1,63 @@
+.playground {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #FFFFFF;
+  }
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0;
+    height: 65vh;
+    width: 97%;
+    background: linear-gradient(180deg, #EBF1F5 0%, #C2D4DE 49%, #EBF1F5 100%);
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    &::-webkit-scrollbar-button {
+        height: 0;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #C2D4DE;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__main{
+    width: 75%;
+    height: 100%;
+    &--fullscreen {
+      width:100%;
+    }
+    transition: all 0.3s;
+  }
+  &__aside {
+    position: fixed;
+    right: 55px;
+    width: 25%;
+    height: 100%;
+    &--fullscreen {
+      width: 40px;
+    }
+    transition: all 0.3s;
+  }
+}

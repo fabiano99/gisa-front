@@ -1,0 +1,110 @@
+.card {
+  width: 320px;
+  height: 113px;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 0px 6px 7.9px 0px rgba(0, 0, 0, 0.55);
+  background: var(--grad-card, linear-gradient(180deg, #013164 5.5%, #013164 62%, #255992 100%));
+
+  &__body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: #DBDBDB;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 10px;
+    &::selection { background: transparent }
+  }
+
+  &__value {
+    font-size: 22px;
+    color: #DBDBDB;
+    line-height: 100%;
+    margin-bottom: 10px;
+    &::-moz-selection { background: transparent }
+    &::selection { background: transparent }
+  }
+
+  &__month {
+    color: #DBDBDB;
+    margin-bottom: 8px;
+    &::-moz-selection { background: transparent }
+    &::selection { background: transparent }
+    & span {
+      &::-moz-selection { background: transparent }
+      &::selection { background: transparent }
+    }
+  }
+  &__variation {
+    font-size: 12px;
+    font-weight: 500;
+    color:#00FFE0;
+    margin-bottom: 8px;
+    & span{
+      font-weight: 800;
+      &::-moz-selection { background: transparent }
+      &::selection { background: transparent }
+    }
+    &::-moz-selection { background: transparent }
+    &::selection { background: transparent }
+  }
+
+  & button {
+    display: flex;
+    background-color: transparent;
+    border-radius: 9px;
+    border: 1px solid #7967FF;
+    padding: 9px 12px;
+    height: 40px;
+    width: 48px;
+    align-items: center;
+    cursor: pointer;
+    &::after {
+      content: "";
+      opacity: 0;
+    }
+
+    & img {
+      width: 20px;
+      height: 20px;
+      &::-moz-selection { background: transparent }
+      &::selection { background: transparent }
+    }
+  }
+
+  &:hover {
+    border: 1px solid #00FFE0;
+    background: #013164;
+    .card__title {
+      margin-bottom: 0;
+      margin-top: 20px;
+      transition: all 350ms;
+    }
+    .card__value {
+      margin-bottom: 0;
+      transition: all 350ms;
+    }
+    button {
+      &::after {
+        content: "Gerar Insight";
+        text-wrap: nowrap;
+        color: #DBDBDB;
+        font-size: 12px;
+        margin-left: 4px;
+        opacity: 1;
+        transition: opacity 600ms;
+        &::-moz-selection { background: transparent }
+        &::selection { background: transparent }
+      }
+        width: 120px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(90deg, #C082FF 0%, #7967FF 100%);
+        transition: width 100ms ease-in-out;
+      }
+
+  }
+}

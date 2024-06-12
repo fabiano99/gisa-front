@@ -1,0 +1,56 @@
+.button__container {
+  display: flex;
+  justify-content: flex-end;
+  width: 87%;
+  margin-left: 10px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+}
+
+.button__insight {
+  display: flex;
+  border-radius: 9px;
+  border: 1px solid #7967FF;
+  padding: 9px 12px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  width: 236px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(90deg, #C082FF 0%, #7967FF 100%);
+  transition: width 100ms ease-in-out;
+  cursor: pointer;
+  &::after {
+    content: "Gerar Insight";
+    text-wrap: nowrap;
+    color: #DBDBDB;
+    font-size: 12px;
+    margin-left: 4px;
+    opacity: 1;
+    transition: opacity 600ms;
+    &::-moz-selection { background: transparent }
+    &::selection { background: transparent }
+  }
+
+  & img {
+    width: 20px;
+    height: 20px;
+    &::-moz-selection { background: transparent }
+    &::selection { background: transparent }
+  }
+}
+
+.empty-prompt{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+  padding: 0 20%;
+  box-sizing: border-box;
+  color: #032E5C;
+  font-weight: 800;
+  line-height: 80px;
+  font-size: 64px;
+  text-align: center;
+}

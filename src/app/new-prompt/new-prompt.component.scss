@@ -1,0 +1,12 @@
+button {
+  width: 388px;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  background: var(--grad-card, linear-gradient(180deg, #013164 5.5%, #013164 62%, #255992 100%));
+  color: #00FFE0;
+  line-height: 18px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+}

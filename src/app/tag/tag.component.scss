@@ -1,0 +1,21 @@
+.tag__item {
+  height: 32px;
+  display: inline-flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #CED4DA;
+  background-color: #F7F7F770;
+  color: #989494;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &.active {
+    background-color: #F7F7F7;
+    color: #4A4A4A;
+  }
+}

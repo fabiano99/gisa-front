@@ -1,0 +1,8 @@
+<div class="footer">
+    <div class="footer__input">
+      <gisa-input-prompt [clearPrompt]="promptCleared"  (updateChat)="updateChatHistory($event)"></gisa-input-prompt>
+    </div>
+    <div class="footer__new-prompt">
+      <gisa-new-prompt (onClearPrompt)="clearPrompt()"></gisa-new-prompt>
+    </div>
+</div>

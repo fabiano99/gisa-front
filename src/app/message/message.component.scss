@@ -1,0 +1,26 @@
+.message {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    background-color: #FFFFFF54;
+    margin: 10px;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: #464545;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20.8px;
+    position: relative;
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__icon {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -17px;
+    left: -17px;
+  }
+}

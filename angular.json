@@ -19,7 +19,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "gisa",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -36,6 +36,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets"
               }
             ],
             "styles": [

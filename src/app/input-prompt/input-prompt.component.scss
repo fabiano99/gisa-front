@@ -1,0 +1,37 @@
+.input {
+  width: 100%;
+
+  &__field {
+    box-sizing: border-box;
+    width: 80%;
+    height: 52px;
+    padding: 4px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #001F62;
+    border-radius: 10px 0px 0px 10px;
+    &::placeholder {
+      color: #001F62;
+      opacity: 0.8;
+    }
+  }
+  &__button {
+    color: #001F62;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px 2px;
+    cursor: pointer;
+    width: 15%;
+    border: none;
+    background: var(--grad, linear-gradient(180deg, #FCFEFF 10.5%, #C5D5DE 49%, #FFF 82.5%));
+    &:disabled {
+      background: #E5E5E5;
+      color: #B8B8B8;
+      cursor: not-allowed;
+    }
+  }
+}

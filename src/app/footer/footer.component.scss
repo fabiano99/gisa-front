@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  &__input {
+    width: 80%;
+  }
+}

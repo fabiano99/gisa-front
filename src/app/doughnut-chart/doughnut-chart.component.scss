@@ -1,0 +1,38 @@
+.card__chart {
+  width: 230px;
+  height: 150px;
+  background-color: #F7F7F7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #DBDBDB;
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    color: #001F62;
+    font-weight: 500;
+
+    &__title {
+      font-size: 12px;
+
+    }
+    &__value {
+      font-size: 16px;
+    }
+
+    &__variation {
+      color: #00B2FF;
+      font-weight: 800;
+      font-size: 12px;
+      &.down {
+        color: #FF5252;
+      }
+
+    }
+  }
+}

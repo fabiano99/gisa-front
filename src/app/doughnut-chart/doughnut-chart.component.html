@@ -1,0 +1,17 @@
+<div class="card__chart">
+  <figure [id]="chartId"></figure>
+  <div class="card__chart__footer">
+    <div>
+      <p class="card__chart__footer__title">
+        {{ title }}
+      </p>
+      <p class="card__chart__footer__value">
+        {{ value | currency:'BRL' : 'symbol' : '1.2-2': 'pt-BR' }}
+      </p>
+    </div>
+    <p class="card__chart__footer__variation" [ngClass]="variation >= 0 ? 'up' : 'down'">
+      <span>{{ variation * 100 }}%</span>
+      <img [src]="arrowVariation" alt="">
+    </p>
+  </div>
+</div>

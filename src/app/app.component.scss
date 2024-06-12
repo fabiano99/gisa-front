@@ -1,0 +1,12 @@
+.app {
+  height: 100vh;
+  max-width: 100vw;
+  background-color: #023973;
+  overflow-x: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+}
