@@ -27,8 +27,10 @@ export class InputPromptComponent implements OnChanges, OnInit {
   ngOnInit(): void {
     this.inputService.dataTransferObservable.subscribe({
       next: (data) => {
+        this.isLoading = true;
         this.prompt = data;
         this.submitPrompt();
+        this.isLoading = false;
       }
     });
   }

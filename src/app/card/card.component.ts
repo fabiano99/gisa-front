@@ -29,17 +29,21 @@ export class CardComponent {
   @Input() monthReference: string;
   @Input() variation: number;
   @Input() pergunta: string;
+  isLoading: boolean;
   constructor(private service: ApiService, private insightService: generateInsightService) {
     this.title = '';
     this.value = 0;
     this.monthReference = '';
     this.variation = 0;
     this.pergunta = '';
+    this.isLoading = false;
   }
 
   generateInsight() {
+    this.isLoading = true;
     this.service.chatPrompt(this.pergunta).subscribe((response) => {
       this.insightService.push();
+      this.isLoading = false;
     });
   }
 }
