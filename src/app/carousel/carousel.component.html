@@ -1,3 +1,3 @@
 <div #carousel class="carousel__content" (mousedown)="startDragging($event, false, carousel)" (mouseup)="stopDragging($event, false)" (mouseleave)="stopDragging($event, false)" (mousemove)="moveEvent($event, carousel)">
-  <gisa-card *ngFor="let card of cards" [monthReference]="card.melhor_mes" [title]="card.titulo" [value]="card.valor" [variation]="card.periodo_anterior"></gisa-card>
+  <gisa-card *ngFor="let card of cards" [pergunta]="card.pergunta" [monthReference]="card.melhor_mes" [title]="card.titulo" [value]="card.valor" [variation]="card.periodo_anterior"></gisa-card>
 </div>
