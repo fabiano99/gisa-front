@@ -1,8 +1,6 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import * as d3 from 'd3';
-import { ApiService } from "../api.service";
-import { BarChart } from "./bar-chart.model";
 import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
@@ -45,16 +43,7 @@ export class BarChartComponent implements  OnInit {
     const uuid = uuidv4();
     const uuidToId = uuid.replace(/-/g, '').replace(/\d/g, '');
     this.chartId = uuidToId;
-    this.data = [
-      // { Eixo_y: "Fevereiro", Eixo_x: 0.34950000000000003 },
-      // { Eixo_y: "Março", Eixo_x: 0.3635 },
-      // { Eixo_y: "Abril", Eixo_x: 0.3688 },
-      // { Eixo_y: "Maio", Eixo_x: 0.0547 },
-      // { Eixo_y: "Fevereiro", Eixo_x: 34.95 },
-      // { Eixo_y: "Março", Eixo_x: 36.35 },
-      // { Eixo_y: "Abril", Eixo_x: 36.88 },
-      // { Eixo_y: "Maio", Eixo_x: 5.47 }
-  ]
+    this.data = []
   }
   ngOnInit(): void {
     this.declareAxes();

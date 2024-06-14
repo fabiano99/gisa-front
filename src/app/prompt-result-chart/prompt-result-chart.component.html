@@ -10,6 +10,6 @@
     <gisa-doughnut-chart [variation]="0.12" [value]="12800"></gisa-doughnut-chart> -->
 
     <!-- <gisa-bar-chart *ngIf="data.length" [variation]="0.12" [value]="12800" [data]="data"></gisa-bar-chart> -->
-    <gisa-bar-chart2 [data]="data" class="result__charts__bar"></gisa-bar-chart2> 
+    <gisa-bar-chart2 *ngIf="data.length" [data]="data" class="result__charts__bar"></gisa-bar-chart2>
   </div>
 </div>

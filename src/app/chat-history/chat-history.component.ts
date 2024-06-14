@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, Input  } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit  } from '@angular/core';
 import { ApiService } from "../api.service";
 import { Chat } from "../input-prompt/input-prompt.component";
+import { generateInsightService } from "../card/card.component";
 
 @Component({
   selector: 'gisa-chat-history',
@@ -8,14 +9,14 @@ import { Chat } from "../input-prompt/input-prompt.component";
   styleUrl: './chat-history.component.scss',
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class ChatHistoryComponent {
+export class ChatHistoryComponent implements OnInit {
 
   @Input() messages: Chat[];
   @Input() isEmpty: boolean = true;
   insight: string;
 
 
-  constructor(private service: ApiService) {
+  constructor(private service: ApiService, private insightService: generateInsightService) {
     this.messages = [];
     this.insight = '';
   }
@@ -37,5 +38,13 @@ export class ChatHistoryComponent {
 
   shouldShowInsightButton() {
     return this.messages.length > 0 && this.messages.length % 2 === 0;
+  }
+
+  ngOnInit(): void {
+    this.insightService.dataTransferObservable.subscribe({
+      next: () => {
+        this.generateInsight();
+      }
+    });
   }
 }

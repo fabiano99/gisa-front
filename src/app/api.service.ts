@@ -61,7 +61,7 @@ export class ApiService {
     return this.http.get<any>(`${this.baseUrl}/graficos`).pipe(map((response) => response.data));
   }
 
-  chatPrompt(prompt: string): Observable<{response: string, grafico?: BarChartGroup[]}> {
+  chatPrompt(prompt: string): Observable<{response: string, grafico?: BarChart[]}> {
     // return this.http.post<any>(`${this.baseUrl}/chat`, {
     //   "query": {
     //     "user_query": prompt
@@ -79,44 +79,12 @@ export class ApiService {
     return new Observable((observer) => {
       setTimeout(() => {
         observer.next({
-          response: 'Gráficos de vendas <br> por mês de 2023',
+          response: '"Este erro ocorreu porque você inseriu uma questão no lugar de uma instrução SQL. A pergunta \"What are the 5 products with the highest total order value?\" não é uma sintaxe SQL válida, portanto, o interpretador SQL lançou um erro.\n\nAqui está a instrução SQL correta, sem a pergunta:\n\n```sql\nSELECT Nome_produto, SUM(Valor_total) as total_order_value \nFROM pedidos_novo \nGROUP BY Nome_produto \nORDER BY total_order_value DESC \nLIMIT 5;\n```\n\nTente executar apenas essa instrução SQL e você deverá obter os resultados desejados."',
           grafico: [
-            {
-              grupo: 'Vinho tinto seco',
-              dados: [
                 { Eixo_x: 34, Eixo_y: 'Fevereiro' },
                 { Eixo_x: 31, Eixo_y: 'Março' },
                 { Eixo_x: 36, Eixo_y: 'Abril' },
                 { Eixo_x: 5, Eixo_y: 'Maio' }
-              ]
-            },
-            {
-              grupo: 'Vinho tinto suave',
-              dados: [
-                { Eixo_x: 55, Eixo_y: 'Fevereiro' },
-                { Eixo_x: 20, Eixo_y: 'Março' },
-                { Eixo_x: 6, Eixo_y: 'Abril' },
-                { Eixo_x: 50, Eixo_y: 'Maio' }
-              ]
-            },
-            {
-              grupo: 'Vinho branco seco',
-              dados: [
-                { Eixo_x: 23, Eixo_y: 'Fevereiro' },
-                { Eixo_x: 12, Eixo_y: 'Março' },
-                { Eixo_x: 38, Eixo_y: 'Abril' },
-                { Eixo_x: 42, Eixo_y: 'Maio' }
-              ]
-            },
-            {
-              grupo: 'Vinho branco suave',
-              dados: [
-                { Eixo_x: 3, Eixo_y: 'Fevereiro' },
-                { Eixo_x: 6, Eixo_y: 'Março' },
-                { Eixo_x: 14, Eixo_y: 'Abril' },
-                { Eixo_x: 15, Eixo_y: 'Maio' }
-              ]
-            }
           ],
         });
       }, 1000);

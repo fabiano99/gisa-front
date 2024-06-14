@@ -11,7 +11,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 export class PromptResultChartComponent implements OnInit {
   @Input() title: string;
   @Input() text: string;
-  @Input() data: BarChartGroup[] = [];
+  @Input() data: BarChart[] = [];
 
   constructor(private apiService: ApiService, private sanatizer: DomSanitizer) {
     this.title = '';
@@ -25,8 +25,20 @@ export class PromptResultChartComponent implements OnInit {
     // });
   }
   ngOnInit(): void {
+    this.text = this.replaceNewLine(this.text as string);
     const html = this.sanatizer.bypassSecurityTrustHtml(this.text);
     this.text = html as string;
+    if (this.checkForSQLError(this.text)) {
+      this.text = 'Desculpe, houve um erro ao processar sua solicitação. Por favor, tente novamente mais tarde.\nSe o problema persistir, entre em contato com o suporte técnico.';
+    }
   }
 
+  checkForSQLError(response: string) {
+    const sqlErrorRegex = /SQL|WHERE|SELECT/gi;
+    return sqlErrorRegex.test(response);
+  }
+
+  replaceNewLine(text: string) {
+    return text.replaceAll(/\n/g, '<br>');
+  }
 }

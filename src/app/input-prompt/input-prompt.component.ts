@@ -73,5 +73,5 @@ export class InputPromptComponent implements OnChanges, OnInit {
 export interface Chat {
   author: string;
   message: string;
-  grafico?: BarChartGroup[];
+  grafico?: BarChart[];
 }
