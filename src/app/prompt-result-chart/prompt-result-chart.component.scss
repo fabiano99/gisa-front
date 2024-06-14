@@ -27,5 +27,10 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 16px;
+
+    &__bar {
+      display: flex;
+      width: 40%;
+    }
   }
 }

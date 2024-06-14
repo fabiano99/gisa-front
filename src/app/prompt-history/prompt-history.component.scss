@@ -2,9 +2,10 @@
   &__container {
     position: relative;
     max-height: 90%;
-    border-left: 1px solid #959595;
+    // border-left: 1px solid #959595;
     right: 0;
     scrollbar-width: none;
+    overflow-y: auto;
     &.collapsed {
       overflow: hidden;
       border-left: none;
@@ -13,11 +14,15 @@
     transition: all 0.3s;
   }
   &__header {
+    max-width: 85%;
     font-weight: 400;
     font-size: 18px;
     color: #2B2B2B;
     padding: 20px;
     padding-bottom: 0;
+    top: 0;
+    background-color: #D5E1E9;
+    position: sticky;
     &.collapsed {
       display: none;
     }
@@ -25,17 +30,19 @@
   &__collapse-icon {
     position: absolute;
     top: 45%;
-    left: -16px;
+    left: unset;
     cursor: pointer;
+    z-index: 1;
     &.collapsed {
       width: 60px;
-      left: 0;
+      right: -72px;
       z-index: 1;
+      left: unset;
     }
   }
   &__content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 20px;
     min-height: 400px;
     max-height: 90%;
@@ -43,10 +50,16 @@
     opacity: 1;
     overflow-y: auto;
     &.collapsed {
-      opacity: 0;
+      display: none;
     }
     transition: all 0.3s;
     &__item {
+      button {
+        width: 100%;
+        border: none;
+        background: none;
+
+      }
       p {
         cursor: pointer;
         width:90%;
@@ -57,6 +70,7 @@
         color: #001F62;
         margin-bottom: 10px;
         border-radius: 8px;
+        text-align: left;
       }
     }
   }

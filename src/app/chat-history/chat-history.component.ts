@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, NgZone, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input  } from '@angular/core';
 import { ApiService } from "../api.service";
+import { Chat } from "../input-prompt/input-prompt.component";
 
 @Component({
   selector: 'gisa-chat-history',
@@ -7,13 +8,14 @@ import { ApiService } from "../api.service";
   styleUrl: './chat-history.component.scss',
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class ChatHistoryComponent  {
+export class ChatHistoryComponent {
 
-  @Input() messages: {author: string, message: string}[];
+  @Input() messages: Chat[];
   @Input() isEmpty: boolean = true;
   insight: string;
 
-  constructor(private service: ApiService, private zone: NgZone) {
+
+  constructor(private service: ApiService) {
     this.messages = [];
     this.insight = '';
   }
@@ -22,7 +24,6 @@ export class ChatHistoryComponent  {
     this.messages.push({author: 'Você', message: 'Gerar insight'});
     this.service.getInsight().subscribe({
       next: (data) => {
-        console.log(data);
         this.insight = data.insight;
         this.messages.push({author: 'GISA', message: this.insight});
       },

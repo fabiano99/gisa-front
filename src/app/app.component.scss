@@ -3,10 +3,22 @@
   max-width: 100vw;
   background-color: #023973;
   overflow-x: hidden;
-
   &__container {
     display: flex;
     flex-direction: column;
     padding: 20px;
+
+    &__topbar {
+      display: flex;
+
+      & .logo {
+        width: 58px;
+        height: 124px;
+        margin-right: 16px;
+        top: 0;
+      }
+    }
+
+
   }
 }

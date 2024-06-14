@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: row;
   position: relative;
+
   &__input {
     width: 80%;
+    margin-right: 20px;
   }
 }

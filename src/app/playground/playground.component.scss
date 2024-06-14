@@ -12,27 +12,15 @@
     flex-direction: column;
     padding: 20px;
     padding-top: 0;
-    height: 65vh;
-    width: 97%;
+    padding-right: 0;
+    height: 64vh;
+    width: 92%;
+    max-width: 99vw;
     background: linear-gradient(180deg, #EBF1F5 0%, #C2D4DE 49%, #EBF1F5 100%);
     border-radius: 8px;
     overflow-x: hidden;
-    overflow-y: auto;
-    &::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
-    &::-webkit-scrollbar-button {
-        height: 0;
-    }
-    &::-webkit-scrollbar-track-piece {
-        background: white;
-        margin: 0;
-        padding: 0;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: #C2D4DE;
-    }
+    overflow-y: hidden;
+    margin-left: 76px;
   }
 
   &__content {
@@ -43,20 +31,41 @@
   }
 
   &__main{
-    width: 75%;
-    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    height: 72%;
+    margin-right: 4px;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-button {
+        height: 0;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background: white;
+        opacity: 0.1;
+        margin: 0;
+        padding: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--BG-2, linear-gradient(180deg, #360361 29.07%, #9C1E65 100%));
+      border-radius: 8px;
+    }
+    width: 70%;
     &--fullscreen {
       width:100%;
     }
     transition: all 0.3s;
   }
   &__aside {
-    position: fixed;
+    // position: fixed;
     right: 55px;
     width: 25%;
-    height: 100%;
+    height: 64vh;
     &--fullscreen {
       width: 40px;
+      position: absolute;
     }
     transition: all 0.3s;
   }

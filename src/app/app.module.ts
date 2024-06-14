@@ -23,6 +23,8 @@ import { PromptResultChartComponent } from './prompt-result-chart/prompt-result-
 import { HttpClientModule, provideHttpClient } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { BarChart2Component } from './bar-chart2/bar-chart2.component';
 
 registerLocaleData(localePt);
 
@@ -44,7 +46,9 @@ registerLocaleData(localePt);
     NewPromptComponent,
     DoughnutChartComponent,
     PromptResultChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    SideBarComponent,
+    BarChart2Component
   ],
   imports: [
     BrowserModule,

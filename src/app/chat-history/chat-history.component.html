@@ -1,8 +1,8 @@
-<div >
+<div  #chatHistory id="history">
   <div *ngIf="messages.length; else empty" class="chat-history__container">
-    <ng-container *ngFor="let message of messages">
+    <ng-container id="chat" *ngFor="let message of messages">
       <div *ngIf="message.author == 'Você'"><gisa-message [message]="message.message" [author]="message.author"></gisa-message></div>
-      <div *ngIf="message.author != 'Você'"><gisa-prompt-result-chart [title]="message.author" [text]="message.message"></gisa-prompt-result-chart></div>
+      <div *ngIf="message.author != 'Você'"><gisa-prompt-result-chart [title]="message.author" [text]="message.message" [data]="message.grafico || []"></gisa-prompt-result-chart></div>
     </ng-container>
     <div class="button__container">
       <button *ngIf="shouldShowInsightButton()" class="button__insight" (click)="generateInsight()"><img src="Sparkle.svg" alt="" srcset=""></button>

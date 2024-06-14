@@ -1,6 +1,10 @@
 <div class="app">
   <div class="app__container">
-    <gisa-carousel></gisa-carousel>
+    <div class="app__container__topbar">
+      <img class="logo" src="gisa_logo_full.png" alt="">
+      <gisa-carousel></gisa-carousel>
+    </div>
+    <!-- <gisa-bar-chart2></gisa-bar-chart2> -->
     <gisa-playground [isEmpty]="isEmpty" [chat]="chat"></gisa-playground>
     <gisa-footer (onClearPrompt)="handleEmpty()" (updateChat)="handleChat($event)"></gisa-footer>
   </div>

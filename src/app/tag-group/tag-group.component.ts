@@ -11,7 +11,8 @@ export class TagGroupComponent {
   @Input() tags: Tag[];
 
   constructor() {
-    this.tags = [];
+    this.tags = [
+    ];
   }
 
 }

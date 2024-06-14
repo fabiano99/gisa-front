@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ChatResponse } from "../api.service";
+import { Chat } from "../input-prompt/input-prompt.component";
 
 @Component({
   selector: 'gisa-footer',
@@ -8,7 +10,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class FooterComponent {
 
   @Output() onClearPrompt = new EventEmitter<boolean>();
-  @Output() updateChat = new EventEmitter<{author: string, message: string}[]>();
+  @Output() updateChat = new EventEmitter<Chat[]>();
   promptCleared = false;
 
   clearPrompt() {
@@ -16,7 +18,7 @@ export class FooterComponent {
     this.promptCleared = true;
     this.updateChat.emit([]);
   }
-  updateChatHistory(chat: {author: string, message: string}[]) {
+  updateChatHistory(chat: Chat[]) {
     this.updateChat.emit(chat);
     this.promptCleared = false;
   }

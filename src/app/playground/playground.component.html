@@ -4,9 +4,8 @@
       <gisa-tag-group [tags]="tags"></gisa-tag-group>
     </div>
     <div class="playground__content">
-      <section class="playground__main"  ngClass="{{isFull ? 'playground__main--fullscreen' : ''}}">
+      <section #chatHistory class="playground__main"  ngClass="{{isFull ? 'playground__main--fullscreen' : ''}}">
         <gisa-chat-history [isEmpty]="isEmpty" [messages]="chat"></gisa-chat-history>
-        <!-- <gisa-bar-chart></gisa-bar-chart> -->
       </section>
 
       <aside class="playground__aside" ngClass="{{isFull ? 'playground__aside--fullscreen' : ''}}">

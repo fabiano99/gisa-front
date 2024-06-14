@@ -1,6 +1,20 @@
 .input {
   width: 100%;
 
+  &__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__avatar {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    margin-right: 26px;
+  }
+
   &__field {
     box-sizing: border-box;
     width: 80%;
@@ -29,8 +43,8 @@
     border: none;
     background: var(--grad, linear-gradient(180deg, #FCFEFF 10.5%, #C5D5DE 49%, #FFF 82.5%));
     &:disabled {
-      background: #E5E5E5;
-      color: #B8B8B8;
+      background: #CED4DA;
+      color: #001F62;
       cursor: not-allowed;
     }
   }

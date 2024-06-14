@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ChatResponse } from "./api.service";
+import { Chat } from "./input-prompt/input-prompt.component";
 
 @Component({
   selector: 'gisa-root',
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'gisa';
   isEmpty: boolean;
-  chat: {author: string, message: string}[] = [];
+  chat: Chat[] = [];
 
   constructor() {
     this.isEmpty = false;
@@ -21,7 +23,7 @@ export class AppComponent {
     this.chat = [];
   }
 
-  handleChat(chat: {author: string, message: string}[]) {
+  handleChat(chat: Chat[]) {
     this.isEmpty = false;
     this.chat = [...chat];
   }

@@ -1,13 +1,21 @@
-<div class="aside__container" [ngClass]="isCollapsed ? 'collapsed' : 'expanded'">
+<div *ngIf="prompts.length" class="aside__collapse-icon" (click)="collapseHandle()" [ngClass]="isCollapsed ? 'collapsed' : 'expanded'">
+  <img [src]="imageCollapse" alt="ícone de um triângulo" />
+</div>
+<div *ngIf="prompts.length" class="aside__container" [ngClass]="isCollapsed ? 'collapsed' : 'expanded'">
   <div class="aside__header" [ngClass]="isCollapsed ? 'collapsed' : 'expanded'">
     Suas pesquisas recentes
   </div>
-  <div *ngIf="prompts.length" class="aside__collapse-icon" (click)="collapseHandle()" [ngClass]="isCollapsed ? 'collapsed' : 'expanded'">
-    <img [src]="imageCollapse" alt="ícone de um triângulo" />
-  </div>
   <div class="aside__content" [ngClass]="isCollapsed ? 'collapsed' : 'expanded'">
-    <div *ngFor=" let prompt of recently" class="aside__content__item">
-      <p>{{ prompt }}</p>
+
+    <div class="vertical_divider"></div>
+    <div>
+      <div *ngFor=" let prompt of recently" class="aside__content__item">
+        <button (click)="handleClick(prompt)">
+          <p>{{ prompt }}</p>
+        </button>
+
+      </div>
     </div>
+
   </div>
 </div>

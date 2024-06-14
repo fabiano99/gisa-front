@@ -13,8 +13,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 export class BarChartComponent implements  OnInit {
   private svg: any;
   chartId: string;
-  width = 928;
-  height = 500;
+  width = 400;
+  height = 300;
   marginTop = 30;
   marginRight = 0;
   marginBottom = 30;
@@ -44,21 +44,19 @@ export class BarChartComponent implements  OnInit {
     this.value = 0;
     const uuid = uuidv4();
     const uuidToId = uuid.replace(/-/g, '').replace(/\d/g, '');
-    console.log(uuidToId);
     this.chartId = uuidToId;
     this.data = [
-      { Eixo_y: "Fevereiro", Eixo_x: 0.34950000000000003 },
-      { Eixo_y: "Março", Eixo_x: 0.3635 },
-      { Eixo_y: "Abril", Eixo_x: 0.3688 },
-      { Eixo_y: "Maio", Eixo_x: 0.0547 },
-      { Eixo_y: "Fevereiro", Eixo_x: 34.95 },
-      { Eixo_y: "Março", Eixo_x: 36.35 },
-      { Eixo_y: "Abril", Eixo_x: 36.88 },
-      { Eixo_y: "Maio", Eixo_x: 5.47 }
+      // { Eixo_y: "Fevereiro", Eixo_x: 0.34950000000000003 },
+      // { Eixo_y: "Março", Eixo_x: 0.3635 },
+      // { Eixo_y: "Abril", Eixo_x: 0.3688 },
+      // { Eixo_y: "Maio", Eixo_x: 0.0547 },
+      // { Eixo_y: "Fevereiro", Eixo_x: 34.95 },
+      // { Eixo_y: "Março", Eixo_x: 36.35 },
+      // { Eixo_y: "Abril", Eixo_x: 36.88 },
+      // { Eixo_y: "Maio", Eixo_x: 5.47 }
   ]
   }
   ngOnInit(): void {
-    this.data = this.data.filter((d) => d.Eixo_x <= 1);
     this.declareAxes();
     this.createSvg(this.chartId);
     this.drawChart();
@@ -115,7 +113,7 @@ this.svg.append("g")
       .attr("y", 10)
       .attr("fill", "currentColor")
       .attr("text-anchor", "start")
-      .text("Eixo Y (%)"));
+      .text("Eixo Y"));
 
         // Add a text label for each state.
   this.svg.append("g")
@@ -129,7 +127,8 @@ this.svg.append("g")
   .attr("y", (d: { Eixo_x: number; }) => this.y(d.Eixo_x) + Math.sign(d.Eixo_x - 0) * 4)
   .attr("x", (d: { Eixo_y: any; }) => this.x(d.Eixo_y) + this.x.bandwidth() / 2)
   .attr("dy", "1.5em")
-  .text((d: { Eixo_x: any; }) => d.Eixo_x.toFixed(2)*100 + "%");
+  .attr("dx", "-1em")
+  // .text((d: { Eixo_x: any; }) => d.Eixo_x.toFixed(2));
   this.source = this.sanitizer.bypassSecurityTrustHtml(this.svg.node().outerHTML);
 }
 }

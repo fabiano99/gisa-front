@@ -18,7 +18,6 @@ export class CarouselComponent {
 
   constructor(private service:ApiService) {
     service.getCards().subscribe((data) => {
-      console.log('cards:',data);
       this.cards = data.cards;
     });
   }
