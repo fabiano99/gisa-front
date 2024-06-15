@@ -7,4 +7,5 @@ types {
     image/jpeg                 jpeg jpg;
     application/xml            xml;
     image/png                  png;
+    image/svg+xml              svg;
 }
