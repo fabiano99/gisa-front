@@ -27,7 +27,7 @@ export class PromptHistoryComponent implements OnChanges{
   @Output() changeCollapse: EventEmitter<boolean>;
   recently: string[];
 
-  imageCollapse = 'expand-button.svg';
+  imageCollapse = '/assets/expand-button.svg';
   isCollapsed = true;
 
   constructor(private inputService: InputDataService) {
@@ -51,7 +51,7 @@ export class PromptHistoryComponent implements OnChanges{
 
   collapseHandle() {
     this.isCollapsed = !this.isCollapsed;
-    this.imageCollapse = this.isCollapsed ? 'expand-button.svg' : 'collapse-button.svg';
+    this.imageCollapse = this.isCollapsed ? '/assets/expand-button.svg' : '/assets/collapse-button.svg';
     this.changeCollapse.emit(this.isCollapsed);
   }
 

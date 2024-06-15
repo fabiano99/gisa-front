@@ -5,7 +5,7 @@
       <div *ngIf="message.author != 'Você'"><gisa-prompt-result-chart [title]="message.author" [text]="message.message" [data]="message.grafico || []"></gisa-prompt-result-chart></div>
     </ng-container>
     <div class="button__container">
-      <button *ngIf="shouldShowInsightButton()" class="button__insight" (click)="generateInsight()"><img src="Sparkle.svg" alt="" srcset=""></button>
+      <button *ngIf="shouldShowInsightButton()" class="button__insight" (click)="generateInsight()"><img src="/assets/Sparkle.svg" alt="" srcset=""></button>
     </div>
 
   </div>
