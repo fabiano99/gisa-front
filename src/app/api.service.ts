@@ -67,11 +67,11 @@ export class ApiService {
         "user_query": prompt
       },
       "db_config": {
-        "host": "localhost",
-        "port": 3306,
-        "user": "user",
-        "password": "user",
-        "database": "Pedidos"
+        "host": "monorail.proxy.rlwy.net",
+        "port": 10622,
+        "user": "root",
+        "password": "HVVJNUPJYVNEMPEaKCcoUKwBvmbQwswr",
+        "database": "railway"
       }
     });
 
