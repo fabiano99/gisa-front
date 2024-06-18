@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Input } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { v4 as uuidv4 } from 'uuid';
 import { BarChart, BarChartGroup } from "../bar-chart/bar-chart.model";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'gisa-bar-chart2',
@@ -17,6 +18,8 @@ export class BarChart2Component implements AfterViewInit {
     const uuid = uuidv4();
     const uuidToId = uuid.replace(/-/g, '').replace(/\d/g, '');
     this.chartId = uuidToId;
+    Chart.register(ChartDataLabels);
+
   }
   ngAfterViewInit(): void {
     this.createChart();
@@ -39,6 +42,17 @@ export class BarChart2Component implements AfterViewInit {
 
     // choose aleatory colors
     const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    Chart.defaults.set('plugins.datalabels', {
+      color: color,
+      align: 'top',
+      position: 'end',
+      anchor: 'end',
+      offset: -4,
+      font: {
+        weight: 'bold',
+        size: 14
+      }
+    });
 
     this.chart = new Chart(this.chartId, {
       type: 'bar', //this denotes tha type of chart
@@ -55,7 +69,7 @@ export class BarChart2Component implements AfterViewInit {
             borderWidth: 1
           }
          ]
-         
+
         //  this.data.map((dado, index) => {
         //   return {
         //     label: 'Vinho',
@@ -68,6 +82,7 @@ export class BarChart2Component implements AfterViewInit {
         //  }),
 
       },
+      plugins: [ChartDataLabels],
       options: {
         aspectRatio:2.5,
         plugins: {
