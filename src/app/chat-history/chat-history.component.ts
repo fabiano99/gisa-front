@@ -37,7 +37,12 @@ export class ChatHistoryComponent implements OnInit {
   }
 
   shouldShowInsightButton() {
-    return this.messages.length > 0 && this.messages.length % 2 === 0;
+    const isUserMessage = this.messages[this.messages.length - 1].author.toLowerCase() === 'gisa';
+    const isInsightMessage = this.messages[this.messages.length - 2].message === 'Gerar insight';
+    if (isInsightMessage) {
+      return false;
+    }
+    return isUserMessage;
   }
 
   ngOnInit(): void {
